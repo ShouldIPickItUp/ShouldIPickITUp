@@ -1,0 +1,16 @@
+- implement timeout for item caching
+
+- get 'real' data for the other 200+ CL links
+
+- get craigslist to say yes
+
+- implement lyft / uber actual costs
+
+- use ebay developer program
+
+- set crawler schedule
+
+
+- send crawler logs to AWS, possibly separating into different buckets using:
+https://watchtower.readthedocs.io/en/latest/#example-flask-logging-with-watchtower
+

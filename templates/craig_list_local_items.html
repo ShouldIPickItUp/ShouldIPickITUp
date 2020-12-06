@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <title> Craigslist Free stuff in {{zip}}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+
+      <table border=0>
+      <tr>
+      <td><img src="../images/cgeorge.png" style="height:80%;"> </td></td>
+      <td>
+
+          <table border=0>
+
+
+          <tr>
+              <td align="center">
+                  <font size=3 face="Comic Sans MS">See the top free items on Craigslist and how much you can command on Ebay in one click!</font>
+              </td>
+          </tr>
+
+
+          <tr>
+              <td align="center">
+                  <a href="http://ride.lyft.com" target="_blank"><img src="../images/lyft.png"></a>
+             </td>
+          </tr>
+
+
+          <tr>
+              <td align="center">
+                  <a href="http://ride.lyft.com" target="_blank">
+                      <font face="Comic Sans MS">Order a Lyft now!</font>
+                  </a>
+             </td>
+          </tr>
+
+
+          </table>
+
+
+      </td>
+      </tr>
+      </table>
+
+<P>
+
+<font face = "Comic Sans MS">{{city}}, {{state}} - FREE items nearby: </font>
+
+<P>
+
+
+<table class="comicGreen" style='table-layout:fixed;'>
+
+<!--  0 - 4                                       -->
+{% if len_items > 0 %}
+
+  {% set llimit = 0 %}
+  {% set hlimit = 4 %}
+
+        <tr>
+            {% for result in all_links[llimit:hlimit] %}
+            <th><a href="{{result}}" target=_"blank">FREE ITEM {{loop.index}}</a>
+            {% endfor %}
+        </tr>
+
+
+        <tr>
+           {% for post in all_posts[llimit:hlimit] %}
+           <td> {{post}} </td>
+           {% endfor %}
+        </tr>
+
+
+        <tr>
+           {% for eb_link, price in all_cust[llimit:hlimit] %}
+               {% if 'to' in price %}
+    				   {% autoescape false %}
+    					<td> <a href="{{eb_link}}" target=_"blank">&dollar;{{ price | replace("to ", "to &dollar;") }}</a> </td>
+    				   {% endautoescape %}
+    				   {% else %}
+               <td> <a href="{{eb_link}}" target=_"blank">&dollar;{{price}} </a>                             </td>
+    				   {%endif%}
+           {% endfor %}
+        </tr>
+
+{%endif%}
+
+</table>
+
+<P>
+<BR>
+
+
+<table class="comicGreen" style='table-layout:fixed;'>
+
+
+<!--  4 - 8                                       -->
+{% if len_items > 4 %}
+
+  {% set llimit = 4 %}
+  {% set hlimit = 8 %}
+
+        <tr>
+            {% for result in all_links[llimit:hlimit] %}
+            <th><a href="{{result}}" target=_"blank">FREE ITEM {{loop.index + llimit}}</a>
+            {% endfor %}
+        </tr>
+
+
+        <tr>
+           {% for post in all_posts[llimit:hlimit] %}
+           <td> {{post}} </td>
+           {% endfor %}
+        </tr>
+
+
+        <tr>
+           {% for eb_link, price in all_cust[llimit:hlimit] %}
+               {% if 'to' in price %}
+    				   {% autoescape false %}
+    					<td> <a href="{{eb_link}}" target=_"blank">&dollar;{{ price | replace("to ", "to &dollar;") }}</a> </td>
+    				   {% endautoescape %}
+    				   {% else %}
+               <td> <a href="{{eb_link}}" target=_"blank">&dollar;{{price}} </a>                             </td>
+    				   {%endif%}
+           {% endfor %}
+        </tr>
+
+{%endif%}
+
+</table>
+
+<P>
+<BR>
+
+<table class="comicGreen" style='table-layout:fixed;'>
+
+
+<!--  8 - 12                                       -->
+{% if len_items > 8 %}
+
+  {% set llimit = 8 %}
+  {% set hlimit = 12 %}
+
+        <tr>
+            {% for result in all_links[llimit:hlimit] %}
+            <th><a href="{{result}}" target=_"blank">FREE ITEM {{loop.index + llimit}}</a>
+            {% endfor %}
+        </tr>
+
+
+        <tr>
+           {% for post in all_posts[llimit:hlimit] %}
+           <td> {{post}} </td>
+           {% endfor %}
+        </tr>
+
+
+        <tr>
+           {% for eb_link, price in all_cust[llimit:hlimit] %}
+               {% if 'to' in price %}
+    				   {% autoescape false %}
+    					<td> <a href="{{eb_link}}" target=_"blank">&dollar;{{ price | replace("to ", "to &dollar;") }}</a> </td>
+    				   {% endautoescape %}
+    				   {% else %}
+               <td> <a href="{{eb_link}}" target=_"blank">&dollar;{{price}} </a>                             </td>
+    				   {%endif%}
+           {% endfor %}
+        </tr>
+
+{%endif%}
+
+
+</table>
+
+<P>
+
+<button onclick="goBack()">Back</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<P>
+
+<small>
+Data provided on this site is for education purposes only.
+No offer or guarantee of any financial outcome is being made of any kind.
+By using this site you agree to using the data as-is with no warranty of any kind.
+</small>
+
+</body>
+</html>

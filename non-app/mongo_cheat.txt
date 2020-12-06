@@ -1,0 +1,92 @@
+posts.find_one({'zip':'23286'})
+db.posts.count_documents({})
+db.posts.drop( {} )
+db.posts.update(  { "zip":"94015" }, { $set: { 'Items.item1' : 'hi' } } )
+
+=================
+
+posts.replace_one({'zip':'94016'}, {'zip':'94016','Details': {'City': 'dalycity', 'State': 'CA','craigs_local_url':
+     ...: 'https://santamaria.craigslist.org', 'item1' : "text", 'item2': "text2", 'item3' : "text3"}})
+
+In [156]: posts.find_one({'zip':'94016'})
+Out[156]:
+{'_id': ObjectId('5e094f293dc4a1350a76b5bb'),
+ 'zip': '94016',
+ 'Details': {'City': 'dalycity',
+  'State': 'CA',
+  'craigs_local_url': 'https://santamaria.craigslist.org',
+  'item1': 'text',
+  'item2': 'text2',
+  'item3': 'text3'}}
+
+====
+
+In [211]: db.posts.update_one({'zip':'94015'}, {'$set': {'Items.item1':'ji3'}})
+Out[211]: <pymongo.results.UpdateResult at 0x7fbc8bfc4e60>
+
+In [212]: posts.find_one({'zip':'94015'})
+Out[212]:
+{'_id': ObjectId('5e094f293dc4a1350a76b5ba'),
+ 'zip': '94015',
+ 'Details': {'City': 'dalycity', 'State': 'CA', 'item1': 'ji'},
+ 'craigs_local_url': 'https://santamaria.craigslist.org',
+ 'Items': {'item1': 'ji3'}}
+
+==
+db.data.find({"craigs_local_url":{$eq:null}}).count()
+db.posts.find({"craigs_local_url":{$ne:null}}).count()
+use posts
+
+==
+In [657]: dbh.find_one({"$or" : [{"zips" : '21538'}, {'AltZips' : '21538'}]}
+zip = '79697'; dbh.find_one({"$or" : [{"Zips" : zip }, {'AltZips' : zip}]})
+
+=========
+> db.data.count({"EbayLinks":{$ne:null}});
+25
+> db.data.count({"EbayLinks":{$eq:null}});
+801
+> db.data.count({});
+826
+
+> db.data.find({"craigs_url":"https://newyork.craigslist.org/mnh/"})
+
+
+
+MongoDB Enterprise shouldipickitup-shard-0:PRIMARY> db.data.count({"Zips":{$eq:[]}})
+200
+
+===
+
+MongoDB Enterprise Shouldipickitup-shard-0:PRIMARY> db.data.count({"Zips":{$eq:[]}})
+34
+MongoDB Enterprise Shouldipickitup-shard-0:PRIMARY> db.data.count({"Zips":{$ne:[]}})
+382
+
+MongoDB Enterprise Shouldipickitup-shard-0:PRIMARY> db.data.count({"EbayLinks":{$eq:null}})
+9
+MongoDB Enterprise Shouldipickitup-shard-0:PRIMARY> db.data.count({"EbayLinks":{$ne:null}})
+407
+
+
+> db.data.getIndexes()
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "shouldipickitup.data"
+	},
+	{
+		"v" : 2,
+		"unique" : true,
+		"key" : {
+			"craigs_url" : 1
+		},
+		"name" : "craigs_url_1",
+		"ns" : "shouldipickitup.data"
+	}
+]
+>
