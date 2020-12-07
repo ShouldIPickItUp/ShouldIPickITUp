@@ -1,21 +1,18 @@
-# shouldipickitup(.com) > Given a free listing on Craiglist, should I pick it up?  
+# Given a free listing on Craiglist, should I pick it up?  
+www.shouldipickitup.com
+
 NOTES:
  - This project is intentionally "in progress".
  - It serves for inspiration for anyone to learn Python, Flask, MongoDB, Devops principles.
  - And for fun. Feedback or Collaborators Welcome.
  - Shout out to [Gary V](https://www.instagram.com/p/B5ghkSqAduP/)
 
-## High Level Web Site Mockup
-
-![ShouldIpickItUp](non-app/version4.png)
-
-## Peek Screen Gif
+## Web Site -- Peek Screen Gif
 ![Peek Screen Gif](peek.gif)
 
-## High Level Command line Usage example
+## High Level Command line Usage example (Future work)
 
 ```
-
 In [21]: %run craigs_lyft_ebay.py
 "Dish Drying Rack" is Free on Craigslist, is selling for $14.99 on Ebay and is 0.46 miles away from you.
  Using Lyft it will cost between 9.0 and 12.0 dollars to pick up.
@@ -120,4 +117,3 @@ John Ouellette – [@jjouell](https://twitter.com/jjouell) – twitter[1:]@gmail
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
-
