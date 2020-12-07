@@ -1,6 +1,4 @@
-# shouldipickitup(.com)
-> Given a free listing on Craiglist, should I pick it up?
-
+# shouldipickitup(.com) > Given a free listing on Craiglist, should I pick it up?  
 NOTES:
  - This project is intentionally "in progress".
  - It serves for inspiration for anyone to learn Python, Flask, MongoDB, Devops principles.
@@ -12,7 +10,7 @@ NOTES:
 ![ShouldIpickItUp](non-app/version4.png)
 
 ## Peek Screen Gif
-![ShouldIpickItUp](peek.gif)
+![Peek Screen Gif](peek.gif)
 
 ## High Level Command line Usage example
 
@@ -99,15 +97,15 @@ In [21]: %run craigs_lyft_ebay.py
 
 ## Installing
 ```
-git clone https://github.com/ShouldIPickItUp/ShouldIPickItUp.git
+git clone https://github.com/jouellnyc/shouldipickitup.git
 cd shouldipickitup
 docker-compose  up -d
 ```
 
 ## Architechure
-- Nginx will listen on the local host's port 80.
-- Flask will listen locally on port 8000, as well as Mongodb on port 27017.
-- All Containers will be on the same 'bridged' docker network reachable by docker names.
+- Nginx will listen on the local host's port 80
+- Flask and Mongodb will listen on port 8000 and 27017 respectively of the Docker Containers only
+- All 3 will be on the same 'bridged' docker network reachable by docker 'names'
 
 ## Requirements
 git/docker/docker-compose
@@ -117,7 +115,7 @@ John Ouellette – [@jjouell](https://twitter.com/jjouell) – twitter[1:]@gmail
 
 ## Contributing
 
-1. Fork it (<https://github.com/ShouldIPickItUp/ShouldIPickItUp>)
+1. Fork it (<https://github.com/jouellnyc/shouldipickitup>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
